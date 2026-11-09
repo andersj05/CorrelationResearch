@@ -1,7 +1,7 @@
 """Find the project from notebooks or scripts and load versioned assumptions."""
 
-from pathlib import Path
 import tomllib
+from pathlib import Path
 
 
 def project_root(start: Path | None = None) -> Path:
