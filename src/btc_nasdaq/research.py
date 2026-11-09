@@ -86,8 +86,9 @@ def run_research(root: Path | None = None) -> dict:
             sensitivity.append({"lookback": lookback, "entry_z": entry, **stat.to_dict()})
     pd.DataFrame(sensitivity).to_csv(tables / "validation_sensitivity.csv", index=False)
     spread, cointegration = fixed_log_spread(c["prices"], validation["train_end"])
+    spread_periods = {**periods, "train": (None, validation["train_end"])}
     stationary = pd.DataFrame({name: stationarity(spread.loc[start:end])
-                               for name, (start, end) in periods.items()}).T
+                               for name, (start, end) in spread_periods.items()}).T
     stationary.to_csv(tables / "fixed_spread_stationarity.csv")
     def sharpe(x):
         return np.mean(x) / np.std(x, ddof=1) * np.sqrt(252) if np.std(x) > 0 else np.nan

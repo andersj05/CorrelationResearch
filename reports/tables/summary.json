@@ -1,0 +1,53 @@
+{
+  "sample_first": "2018-01-02",
+  "sample_last": "2026-11-06",
+  "sessions": 2225,
+  "pre_2020_correlation": -0.0014864888238978642,
+  "post_2020_correlation": 0.39046010251407487,
+  "latest_beta": 0.8856096839842276,
+  "baseline_model": "ewma_63",
+  "holdout_baseline_hedge": {
+    "n": 716.0,
+    "annual_vol": 0.441972877797288,
+    "variance_reduction": 0.1625212013043983,
+    "residual_beta": -0.02047255707895046,
+    "beta_ci_low": -0.23665738885066245,
+    "beta_ci_high": 0.19571227469276153,
+    "residual_corr": -0.009839790781878785,
+    "mean_beta_change": 0.015095300745849805,
+    "tail_5pct_mean": -0.05602249916727563
+  },
+  "cointegration": {
+    "train_n": 1008,
+    "intercept": -3.815772660766213,
+    "log_price_coefficient": 2.4556934998660784,
+    "engle_granger_p": 0.11106031966039193,
+    "note": "Log-price slope is NOT the minimum-variance return hedge beta."
+  },
+  "train_ou": {
+    "phi": 0.9849354473604081,
+    "phi_low": 0.9762802591541879,
+    "phi_high": 0.9935906355666282,
+    "half_life_sessions": 45.66434945809654,
+    "phi_ci_below_one": true,
+    "note": "Conditional AR(1) diagnostic; not a trading recommendation."
+  },
+  "holdout_strategy": {
+    "sessions": 716.0,
+    "total_return": -0.10085207983601296,
+    "cagr": -0.03672425256192391,
+    "annual_vol": 0.055550513701897924,
+    "sharpe_zero_cash": -0.6456916765352927,
+    "max_drawdown": -0.12297090163090008,
+    "active_fraction": 0.2276536312849162,
+    "annual_turnover": 5.994951938881004,
+    "cost_drag_sum": 0.017885966129118486
+  },
+  "holdout_sharpe_95pct_block_interval": [
+    -1.6367941505920296,
+    0.38967278893074786
+  ],
+  "config_sha256": "a439f17693d662322554abf3d23c905c578561acff2b1c1296cc885c787b8102",
+  "data_sha256": "9a0981ec6532742e1cf61aec5425773123dd0ff9ea111fe2050572ad5fc5d760",
+  "status": "Initial retrospective research; holdout examined once. New changes need a fresh test."
+}

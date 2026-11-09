@@ -1,0 +1,4 @@
+,n,adf_p,kpss_p,kpss_boundary
+train,1008,0.034377777234352216,0.03240538397227687,
+validation,501,0.3424774973730066,0.01,The test statistic is outside of the range of p-values available in the
+holdout,716,0.8056489428031656,0.01,The test statistic is outside of the range of p-values available in the
