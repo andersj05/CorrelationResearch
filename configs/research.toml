@@ -1,0 +1,38 @@
+[data]
+start = "2018-01-01"
+# Exclusive upper bound; a frozen initial sample, not a claim about data availability.
+end = "2026-11-07"
+equity_ticker = "QQQ"
+crypto_product = "BTC-USD"
+calendar = "NASDAQ"
+
+[model]
+warmup = 252
+rolling_windows = [63, 126, 252]
+ewma_halflife = 63
+kalman_alpha_variance = 0.00000001
+kalman_beta_variance = 0.0001
+beta_limit = 4.0
+
+[strategy]
+model = "ewma_63"
+lookback = 20
+entry_z = 1.5
+exit_z = 0.25
+stop_z = 3.5
+max_holding = 10
+target_vol = 0.10
+max_gross = 1.5
+execution_lag = 2
+btc_cost_bps = 10.0
+qqq_cost_bps = 2.0
+short_carry_annual = 0.05
+financing_annual = 0.05
+
+[validation]
+train_end = "2021-12-31"
+validation_end = "2023-12-31"
+holdout_start = "2024-01-01"
+bootstrap_samples = 1000
+bootstrap_block = 10
+seed = 42
